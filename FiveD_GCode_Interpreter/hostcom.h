@@ -307,6 +307,7 @@ inline void hostcom::sendMessage(bool doMessage)
     put("X-INVERT_X_DIR:"); put(INVERT_X_DIR); putWs();
     put("X-INVERT_Y_DIR:"); put(INVERT_Y_DIR); putWs();
     put("X-INVERT_Z_DIR:"); put(INVERT_Z_DIR); putWs();
+    put("X-INVERT_E_DIR:"); put(INVERT_E_DIR); putWs();
     put("X-ENDSTOPS_MIN_ENABLED:"); put(ENDSTOPS_MIN_ENABLED); putWs();
     put("X-ENDSTOPS_MAX_ENABLED:"); put(ENDSTOPS_MAX_ENABLED); putWs();
     put("X-ENABLE_LINES:"); put(ENABLE_LINES); putWs();

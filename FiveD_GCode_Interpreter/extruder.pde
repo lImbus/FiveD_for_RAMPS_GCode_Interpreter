@@ -38,7 +38,7 @@ void extruder::waitForTemperature()
   char msgstring[21];
   char retnum[4]; 
  
-  // short-circuit of its already pre-heated 
+  // short-circuit if it s already pre-heated 
   if ( getTemperature() + HALF_DEAD_ZONE >= getTarget() ) { return; } // return immediate if we are close enough!
 
   while (true)

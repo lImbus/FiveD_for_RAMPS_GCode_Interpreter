@@ -124,7 +124,11 @@ error TODO not yet implemented hjere
 inline void extruder::setDirection(bool dir)
 {
 	e_direction = dir;
-	digitalWrite(motor_dir_pin, e_direction);
+#if INVERT_E_DIR == 1
+	digitalWrite(motor_dir_pin, !e_direction);
+#else
+        digitalWrite(motor_dir_pin, e_direction);
+#endif
 }
 
 inline void extruder::setCooler(byte sp)
