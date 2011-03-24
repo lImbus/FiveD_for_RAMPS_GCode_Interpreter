@@ -264,7 +264,11 @@
 // RepRap opto endstops with H21LOI sensors are not inverting; ones with H21LOB
 // are inverting.
 // RepRap opto endstops with H21LOI sensors are not inverting; ones with H21LOB are inverting.
-#define ENDSTOP_OPTO_TYPE ENDSTOP_OPTO_TYPE_H21LOI
+//#define ENDSTOP_OPTO_TYPE ENDSTOP_OPTO_TYPE_H21LOB //ENDSTOP_OPTO_TYPE_H21LOI
+#define ENDSTOP_OPTO_TYPE ENDSTOP_OPTO_TYPE_NORMAL
+
+//turn on internal pull-up resistors for endstops
+#define OPTO_PULLUPS_INTERNAL 1
 
 // are all axes using the same opto? 
 #define X_ENDSTOP_INVERTING ENDSTOP_OPTO_TYPE
@@ -284,8 +288,11 @@
 //It should be exactly 2560 or 640 (200 steps * 16 =3200/1.25=2560) the 1.25 is the "steigung" of the M8x1.25 rod
 #define Z_STEPS_PER_MM   2560 //2601.3203 //2666.8736  //6667.184
 //E0_STEPS_PER_MM is the number of steps needed to extrude 1mm out of the nozzle.  
-#define E0_STEPS_PER_MM  16      // NEMA 17 59/11 geared extruder 8mm diameter drive
+//#define E0_STEPS_PER_MM  88//22 //457.143 //160 // 16      // NEMA 17 59/11 geared extruder 8mm diameter drive
 #endif
+
+//for Volumetric 5D: 10 revolutions (2000 steps) is 60 mm going INTO extruder
+#define E0_STEPS_PER_MM  33.33*MICROSTEPPING  //microstepping
 
 // these ones are for the newer 9-tooth pulley: set-screw-drive-pulley_4_6-5_9_7_3off
 // See mendel/mechanics/solid-models/cartesian-robot-m4/printed-parts/alternative-parts/readme
