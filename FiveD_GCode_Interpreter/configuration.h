@@ -281,7 +281,8 @@
 #if BELT_PULLEY_TYPE == MENDEL_8_TOOTH_ORIGINAL
 #define X_STEPS_PER_MM   80.376 // should really be defined as MICROSTEPPING*X
 #define Y_STEPS_PER_MM   80.376
-#define Z_STEPS_PER_MM   6667.184
+//It should be exactly 2560 or 640 (200 steps * 16 =3200/1.25=2560) the 1.25 is the "steigung" of the M8x1.25 rod
+#define Z_STEPS_PER_MM   2560 //2601.3203 //2666.8736  //6667.184
 //E0_STEPS_PER_MM is the number of steps needed to extrude 1mm out of the nozzle.  
 #define E0_STEPS_PER_MM  16      // NEMA 17 59/11 geared extruder 8mm diameter drive
 #endif
