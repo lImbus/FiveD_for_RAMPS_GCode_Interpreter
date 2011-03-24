@@ -53,6 +53,30 @@ short temptable[NUMTEMPS][2] = {
 
 #if HEATED_BED == HEATED_BED_ON 
 // ... And this is the heated bed thermistor (if any)
+
+short bedtemptable[NUMTEMPS][2] = {
+   {1, 841},
+   {54, 255},
+   {107, 209},
+   {160, 184},
+   {213, 166},
+   {266, 153},
+   {319, 142},
+   {372, 132},
+   {425, 124},
+   {478, 116},
+   {531, 108},
+   {584, 101},
+   {637, 93},
+   {690, 86},
+   {743, 78},
+   {796, 70},
+   {849, 61},
+   {902, 50},
+   {955, 34},
+   {1008, 3}
+};
+
 /*
 //HSBNE heated bed settings
 // using Jaycar 125deg 10k thermistor and 4.7k R
@@ -92,7 +116,7 @@ short bedtemptable[NUMTEMPS][2] = {
 // beta: 3480
 // max adc: 1023
 
-short bedtemptable[NUMTEMPS][2] = {
+/*short bedtemptable[NUMTEMPS][2] = {
    {1, 599},
    {54, 160},
    {107, 123},
@@ -113,7 +137,7 @@ short bedtemptable[NUMTEMPS][2] = {
    {902, -3},
    {955, -16},
    {1008, -42}
-};
+};*/
 #endif
  
 /*

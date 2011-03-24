@@ -253,7 +253,6 @@
 #define ENABLE_PIN_STATE  ENABLE_PIN_STATE_INVERTING // For RepRap stepper boards version 2.x and above the enable pins are inverting.
 
 // Both Darwin and Mendel have MIN endstops, but not MAX ones.
-//#define ENDSTOPS_MIN_ENABLED 0
 #define ENDSTOPS_MIN_ENABLED 1
 #define ENDSTOPS_MAX_ENABLED 0
 
@@ -264,7 +263,6 @@
 // RepRap opto endstops with H21LOI sensors are not inverting; ones with H21LOB
 // are inverting.
 // RepRap opto endstops with H21LOI sensors are not inverting; ones with H21LOB are inverting.
-//#define ENDSTOP_OPTO_TYPE ENDSTOP_OPTO_TYPE_H21LOB //ENDSTOP_OPTO_TYPE_H21LOI
 #define ENDSTOP_OPTO_TYPE ENDSTOP_OPTO_TYPE_NORMAL
 
 //turn on internal pull-up resistors for endstops
@@ -291,8 +289,10 @@
 //#define E0_STEPS_PER_MM  88//22 //457.143 //160 // 16      // NEMA 17 59/11 geared extruder 8mm diameter drive
 #endif
 
-//for Volumetric 5D: 10 revolutions (2000 steps) is 60 mm going INTO extruder
-#define E0_STEPS_PER_MM  33.33*MICROSTEPPING  //microstepping
+//for Volumetric 5D: 10 revolutions (2000 steps) is 60 mm going INTO extruder => 33.33
+//                   the calculated value (pulleys/ratios/diameters): 33.18
+//                   Rene/Sven likes 24.24
+#define E0_STEPS_PER_MM  33.18*MICROSTEPPING  //microstepping
 
 // these ones are for the newer 9-tooth pulley: set-screw-drive-pulley_4_6-5_9_7_3off
 // See mendel/mechanics/solid-models/cartesian-robot-m4/printed-parts/alternative-parts/readme
@@ -337,7 +337,7 @@
 
 #define ACCELERATION  ACCELERATION_OFF //ACCELERATION_ON
 
-#define HEATED_BED HEATED_BED_OFF
+#define HEATED_BED HEATED_BED_ON
 
 // Set these to 1 to disable an axis when it's not being used,
 // and for the extruder.  Usually only Z is disabled when not in
