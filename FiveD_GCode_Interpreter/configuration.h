@@ -253,8 +253,8 @@
 #define ENABLE_PIN_STATE  ENABLE_PIN_STATE_INVERTING // For RepRap stepper boards version 2.x and above the enable pins are inverting.
 
 // Both Darwin and Mendel have MIN endstops, but not MAX ones.
-//#define ENDSTOPS_MIN_ENABLED 1
-#define ENDSTOPS_MIN_ENABLED 0
+//#define ENDSTOPS_MIN_ENABLED 0
+#define ENDSTOPS_MIN_ENABLED 1
 #define ENDSTOPS_MAX_ENABLED 0
 
 #define MOVEMENT_TYPE MOVEMENT_TYPE_STEP_DIR // darwin axes are moved around with STEP/DIRECTION logic.
@@ -311,7 +311,7 @@
 #define INVERT_X_DIR 0
 #define INVERT_Y_DIR 0
 #define INVERT_Z_DIR 1
-#define INVERT_E_DIR 0
+#define INVERT_E_DIR 0 // not respected in soft currently
 
 
 // The number of real extruders in this machine
@@ -327,7 +327,7 @@
 #define FAST_XY_FEEDRATE 3000.0
 #define FAST_Z_FEEDRATE  50.0
 
-#define ACCELERATION  ACCELERATION_ON
+#define ACCELERATION  ACCELERATION_OFF //ACCELERATION_ON
 
 #define HEATED_BED HEATED_BED_OFF
 
