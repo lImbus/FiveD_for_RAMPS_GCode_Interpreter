@@ -143,14 +143,14 @@ void PIDcontrol::pidCalculation()
 #if THERMAL_CONTROL == THERMAL_CONTROL_SIMPLE
 
   if(doingBed) {   //PWM for the bed
-    if (targetTemperature > currentTemperature) {
+    if (targetTemperature >= currentTemperature) {
       analogWrite(heat_pin, 255);  //don't ever run bed above 255 PWM!  
     }else {
       analogWrite(heat_pin, 0);  //even when off, we could run it on low to "warm" it gently, but we dont
     } 
  //   Serial.println("bed");
   }else {  // ban-bang for the extruder 
-  if (targetTemperature > currentTemperature)
+  if (targetTemperature >= currentTemperature)
     digitalWrite(heat_pin, 1);  //100% power 
   else
     digitalWrite(heat_pin, 0);  //no power

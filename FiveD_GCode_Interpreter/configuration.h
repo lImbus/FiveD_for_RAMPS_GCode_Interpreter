@@ -253,7 +253,8 @@
 #define ENABLE_PIN_STATE  ENABLE_PIN_STATE_INVERTING // For RepRap stepper boards version 2.x and above the enable pins are inverting.
 
 // Both Darwin and Mendel have MIN endstops, but not MAX ones.
-#define ENDSTOPS_MIN_ENABLED 1
+//#define ENDSTOPS_MIN_ENABLED 1
+#define ENDSTOPS_MIN_ENABLED 0
 #define ENDSTOPS_MAX_ENABLED 0
 
 #define MOVEMENT_TYPE MOVEMENT_TYPE_STEP_DIR // darwin axes are moved around with STEP/DIRECTION logic.
@@ -465,7 +466,8 @@
 #define HOST_BAUD 19200
 #endif 
 #if DEFAULTS ==  MENDEL_MEGA_DEFAULTS
-#define HOST_BAUD 19200
+//#define HOST_BAUD 19200
+#define HOST_BAUD 57600
 #endif 
 #ifndef HOST_BAUD // fall back to old speed
 #define HOST_BAUD 19200
