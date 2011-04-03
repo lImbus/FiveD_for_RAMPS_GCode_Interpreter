@@ -69,6 +69,13 @@ cartesian_dda::cartesian_dda()
 	pinMode(X_MAX_PIN, INPUT);
 	pinMode(Y_MAX_PIN, INPUT);
 	pinMode(Z_MAX_PIN, INPUT);
+
+// pullup resistors:
+#if OPTO_PULLUPS_INTERNAL == 1
+        digitalWrite(X_MAX_PIN,HIGH);
+        digitalWrite(Y_MAX_PIN,HIGH);
+        digitalWrite(Z_MAX_PIN,HIGH);
+#endif
 #endif
 	
         // Default units are mm
